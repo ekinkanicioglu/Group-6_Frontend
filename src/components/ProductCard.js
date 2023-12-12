@@ -14,7 +14,7 @@ function ProductCard({ product, showEditDelete, onProductDelete }) {
   const handleDelete = () => {
     if (window.confirm("Are you sure you want to delete this product?")) {
       axios
-        .delete(`http://localhost:3000/products/deletep/${product.id}`)
+        .delete(`https://sellnow-backend.onrender.com/products/deletep/${product.id}`)
         .then(() => {
           console.log("Product deleted successfully");
           if (onProductDelete) {
