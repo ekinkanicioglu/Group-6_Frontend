@@ -55,7 +55,7 @@ function AddProduct() {
     let token = localStorage.getItem("token") || "";
     let config = {headers:  {'Authorization': `Bearer ${token}`, 'Content-Type': "application/json"}}
     axios
-      .post("http://localhost:3000/products/create/", product, config)
+      .post("https://sellnow-backend.onrender.com/products/create/", product, config)
       .then((response) => {
         console.log("Product added successfully:", response.data);
 
