@@ -18,7 +18,7 @@ function Login() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3000/users/login", {
+      const response = await axios.post("https://sellnow-backend.onrender.com/users/login", {
         email: email,
         hashed_password: password,
       });
