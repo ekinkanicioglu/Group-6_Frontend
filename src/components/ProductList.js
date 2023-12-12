@@ -10,7 +10,7 @@ function ProductList({ showEditDelete }) {
 
   const fetchProducts = () => {
     axios
-      .get("http://localhost:3000/products")
+      .get("https://sellnow-backend.onrender.com/products")
       .then((response) => {
         setProducts(response.data);
       })
