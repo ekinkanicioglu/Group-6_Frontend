@@ -61,7 +61,7 @@ function EditProduct() {
     e.preventDefault();
     console.log(product);
     axios
-      .put(`http://localhost:3000/products/modify/${product.id}`, product)
+      .put(`https://sellnow-backend.onrender.com/products/modify/${product.id}`, product)
       .then(() => {
         navigate(-1);
       })
