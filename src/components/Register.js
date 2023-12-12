@@ -21,7 +21,7 @@ function Register() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:3000/users/signup",
+        "https://sellnow-backend.onrender.com/users/signup",
         formData
       );
       console.log("User registered:", response.data);
