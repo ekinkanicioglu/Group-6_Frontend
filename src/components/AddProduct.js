@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "../styles/AddProduct.css";
+import Navbar from "./Navbar";
 
 function AddProduct() {
   const [product, setProduct] = useState({
@@ -55,7 +56,7 @@ function AddProduct() {
     let token = localStorage.getItem("token") || "";
     let config = {headers:  {'Authorization': `Bearer ${token}`, 'Content-Type': "application/json"}}
     axios
-      .post("https://sellnow-backend.onrender.com/products/create/", product, config)
+      .post("https://sellnow-backend.onrender.com/products/create", product, config)
       .then((response) => {
         console.log("Product added successfully:", response.data);
 
@@ -80,6 +81,8 @@ function AddProduct() {
   };
 
   return (
+    <div>
+    <Navbar />
     <div className="add-product-card">
       <div className="add-product-container">
         <h2>Add Product</h2>
@@ -168,6 +171,7 @@ function AddProduct() {
           </button>
         </form>
       </div>
+    </div>
     </div>
   );
 }

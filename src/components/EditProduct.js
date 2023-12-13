@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "../styles/EditProduct.css";
 import axios from "axios";
+import Navbar from "./Navbar";
 
 function EditProduct() {
   const location = useLocation();
@@ -75,6 +76,8 @@ function EditProduct() {
   };
 
   return (
+    <div>
+    <Navbar />
     <div className="edit-product-container">
       <h2>Edit Product</h2>
       <form onSubmit={handleSubmit} className="edit-product-form">
@@ -162,6 +165,7 @@ function EditProduct() {
           Cancel
         </button>
       </form>
+    </div>
     </div>
   );
 }

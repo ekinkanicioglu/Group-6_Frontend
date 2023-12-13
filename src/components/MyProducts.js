@@ -8,10 +8,6 @@ function MyProducts() {
   const [products, setProducts] = useState([]);
   const userEmail = localStorage.getItem("email");
 
-  useEffect(() => {
-    fetchProducts();
-  }, []);
-
   const fetchProducts = () => {
     axios
       .get("https://sellnow-backend.onrender.com/products")

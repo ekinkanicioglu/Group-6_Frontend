@@ -20,12 +20,17 @@ function Navbar() {
     <nav className="navbar">
       <div className="navbar-brand">
         <Link to="/" className="navbar-logo">
-          Buy and Sell
+          SellNow
         </Link>
       </div>
       <ul className="navbar-nav">
         {isLoggedIn ? (
           <>
+              <li className="nav-item">
+              <Link to="/" className="nav-link">
+                Home
+              </Link>
+            </li>
             <li className="nav-item">
               <Link to="/my-products" className="nav-link">
                 My Products
@@ -34,6 +39,11 @@ function Navbar() {
             <li className="nav-item">
               <Link to="/add-product" className="nav-link">
                 Add Product
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/edit-product" className="nav-link">
+                EditProduct
               </Link>
             </li>
             <li className="nav-item">

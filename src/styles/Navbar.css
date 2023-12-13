@@ -1,42 +1,48 @@
 /* Navbar.css */
 
 .navbar {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .navbar-logo {
-    color: #fff;
-    text-decoration: none;
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  .navbar-nav {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .nav-item {
-    margin: 0;
-  }
-  
-  .nav-link {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-  }
-  
-  .nav-link:hover {
-    text-decoration: underline;
-  }
+  background-color: #333;
+  color: #fff;
+  padding: auto;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  .logout-button { 
-    margin-left: 30px;
-  }
-  
+.navbar-logo {
+  color: #fff;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar-nav {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-item {
+  margin: 0;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.logout-button { 
+  margin-left: 30px;
+}
+
+.logo-image {
+  width: 50px; /* Set the desired width */
+  height: auto; /* Maintain the aspect ratio */
+  margin-right: 10px; /* Optional: Add some spacing to the right */
+}

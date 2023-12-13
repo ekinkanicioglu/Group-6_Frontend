@@ -27,10 +27,13 @@ function ProductCard({ product, showEditDelete, onProductDelete }) {
     }
   };
 
+  const itemNameForUrl = (product.itemName||'').toLowerCase().replace(/\s+/g, '_');
+  const imageUrl = `/multimedia/${itemNameForUrl}.jpg`;
+
   return (
     <div className="product-card">
       <div className="product-image">
-        <img src="/demo_image.jpeg" alt={product.itemName} />
+        <img src={imageUrl} alt={product.itemName} />
       </div>
       <div className="product-details">
         <h3>{product.itemName}</h3>
@@ -52,6 +55,7 @@ function ProductCard({ product, showEditDelete, onProductDelete }) {
     </div>
   );
 }
+
 
 ProductCard.propTypes = {
   product: PropTypes.object.isRequired,
