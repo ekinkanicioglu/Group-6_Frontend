@@ -4,13 +4,14 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ProductCard from "./ProductCard";
 import "../styles/ProductList.css";
+import {serverUrl} from "../constants";
 
 function ProductList({ showEditDelete }) {
   const [products, setProducts] = useState([]);
 
   const fetchProducts = () => {
     axios
-      .get("https://sellnow-backend.onrender.com/products")
+      .get(`${serverUrl}/products`)
       .then((response) => {
         setProducts(response.data);
       })

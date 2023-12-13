@@ -1,2 +1,6 @@
-let localhost_url = "http://localhost:3000"
-let server_url = "https://sellnow-backend.onrender.com"
+const localhostUrl = "http://localhost:3000"
+const renderUrl = "https://sellnow-backend.onrender.com"
+
+const serverUrl = (process.env.ENV === 'production') ? renderUrl: localhostUrl;
+
+export {serverUrl}

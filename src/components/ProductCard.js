@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../styles/ProductCard.css";
+import {serverUrl} from "../constants";
 
 function ProductCard({ product, showEditDelete, onProductDelete }) {
   const navigate = useNavigate();
@@ -14,7 +15,7 @@ function ProductCard({ product, showEditDelete, onProductDelete }) {
   const handleDelete = () => {
     if (window.confirm("Are you sure you want to delete this product?")) {
       axios
-        .delete(`https://sellnow-backend.onrender.com/products/deletep/${product.id}`)
+        .delete(`${serverUrl}/products/deletep/${product.id}`)
         .then(() => {
           console.log("Product deleted successfully");
           if (onProductDelete) {

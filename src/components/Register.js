@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import {serverUrl} from "../constants";
 
 function Register() {
   const [formData, setFormData] = useState({
@@ -21,7 +22,7 @@ function Register() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://sellnow-backend.onrender.com/users/signup",
+        `${serverUrl}/users/signup`,
         formData
       );
       console.log("User registered:", response.data);

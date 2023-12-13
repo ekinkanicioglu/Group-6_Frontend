@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import "../styles/EditProduct.css";
 import axios from "axios";
 import Navbar from "./Navbar";
+import {serverUrl} from "../constants";
 
 function EditProduct() {
   const location = useLocation();
@@ -62,7 +63,7 @@ function EditProduct() {
     e.preventDefault();
     console.log(product);
     axios
-      .put(`https://sellnow-backend.onrender.com/products/modify/${product.id}`, product)
+      .put(`${serverUrl}/products/modify/${product.id}`, product)
       .then(() => {
         navigate(-1);
       })

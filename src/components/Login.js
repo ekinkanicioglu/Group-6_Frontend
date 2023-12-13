@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../styles/Auth.css";
+import {serverUrl} from "../constants";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -18,7 +19,7 @@ function Login() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post("https://sellnow-backend.onrender.com/users/login", {
+      const response = await axios.post(`${serverUrl}/users/login`, {
         email: email,
         hashed_password: password,
       });

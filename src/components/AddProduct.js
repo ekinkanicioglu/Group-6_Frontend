@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "../styles/AddProduct.css";
 import Navbar from "./Navbar";
+import {serverUrl} from "../constants";
 
 function AddProduct() {
   const [product, setProduct] = useState({
@@ -56,7 +57,7 @@ function AddProduct() {
     let token = localStorage.getItem("token") || "";
     let config = {headers:  {'Authorization': `Bearer ${token}`, 'Content-Type': "application/json"}}
     axios
-      .post("https://sellnow-backend.onrender.com/products/create", product, config)
+      .post(`${serverUrl}/products/create`, product, config)
       .then((response) => {
         console.log("Product added successfully:", response.data);
 

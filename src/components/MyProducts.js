@@ -3,6 +3,7 @@ import axios from "axios";
 import ProductCard from "./ProductCard";
 import "../styles/ProductList.css";
 import Navbar from "./Navbar";
+import {serverUrl} from "../constants";
 
 function MyProducts() {
   const [products, setProducts] = useState([]);
@@ -10,7 +11,7 @@ function MyProducts() {
 
   const fetchProducts = () => {
     axios
-      .get("https://sellnow-backend.onrender.com/products")
+      .get(`${serverUrl}/products`)
       .then((response) => {
         const userProducts = response.data.filter(
           (product) => product.email === userEmail
