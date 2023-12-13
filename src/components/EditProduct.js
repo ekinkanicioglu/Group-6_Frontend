@@ -3,6 +3,16 @@ import { useLocation, useNavigate } from "react-router-dom";
 import "../styles/EditProduct.css";
 import axios from "axios";
 
+
+axios.put(https://sellnow-backend.onrender.com/products/modify/${product.id}, product)
+  .then(() => {
+    navigate(-1);
+  })
+  .catch((error) => {
+    console.error("Error updating product:", error.response.data);
+  });
+
+
 function EditProduct() {
   const location = useLocation();
   const navigate = useNavigate();
