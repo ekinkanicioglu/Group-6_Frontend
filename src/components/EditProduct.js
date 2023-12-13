@@ -26,37 +26,38 @@ function EditProduct() {
   }, [location.state]);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    if (["qty", "h", "w", "price"].includes(name)) {
-      const parsedValue =
-        name === "qty" ? parseInt(value, 10) : parseFloat(value);
+  const { name, value } = e.target;
 
-      if (parsedValue <= 0 || isNaN(parsedValue)) {
-        return;
-      }
-
-      if (["h", "w"].includes(name)) {
-        setProduct({
-          ...product,
-          size: {
-            ...product.size,
-            [name]: parsedValue,
-          },
-        });
-      } else {
-        setProduct({
-          ...product,
-          [name]: parsedValue,
-        });
-      }
-    } else {
-      setProduct({
-        ...product,
-        [name]: value,
-      });
+  // Check if the input is for the size object
+  if (["h", "w", "uom"].includes(name)) {
+    setProduct({
+      ...product,
+      size: {
+        ...product.size,
+        [name]: name === "uom" ? value : parseFloat(value),
+      },
+    });
+  } else if (["qty", "price"].includes(name)) {
+    // Parse integers for quantity and floats for price
+    const parsedValue = name === "qty" ? parseInt(value, 10) : parseFloat(value);
+    
+    if (parsedValue <= 0 || isNaN(parsedValue)) {
+      // Don't update for invalid values
+      return;
     }
-  };
 
+    setProduct({
+      ...product,
+      [name]: parsedValue,
+    });
+  } else {
+    // Handle all other inputs as strings
+    setProduct({
+      ...product,
+      [name]: value,
+    });
+  }
+};
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(product);
