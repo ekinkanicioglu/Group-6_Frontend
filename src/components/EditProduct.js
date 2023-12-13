@@ -145,7 +145,7 @@ function EditProduct() {
           <label>Unit of Measurement:</label>
           <input
             type="text"
-            name="uom"
+            name="size"
             required
             value={product.size.uom}
             onChange={handleChange}
