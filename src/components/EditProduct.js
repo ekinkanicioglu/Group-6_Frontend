@@ -143,7 +143,6 @@ function EditProduct() {
          <input
             type="text"
             name="uom"
-            required
             value={product.size.uom}
             onChange={handleChange}
 />
