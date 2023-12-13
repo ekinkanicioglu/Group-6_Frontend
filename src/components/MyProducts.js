@@ -14,7 +14,7 @@ function MyProducts() {
 
   const fetchProducts = () => {
     axios
-      .get("http://localhost:3000/products")
+      .get("https://sellnow-backend.onrender.com/products/myProducts")
       .then((response) => {
         const userProducts = response.data.filter(
           (product) => product.email === userEmail
