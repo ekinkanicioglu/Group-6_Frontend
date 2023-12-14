@@ -13,9 +13,6 @@ function MyProducts() {
     axios
       .get(`${serverUrl}/products`)
       .then((response) => {
-        const userProducts = response.data.filter(
-          (product) => product.email === userEmail
-        );
         setProducts(userProducts);
       })
       .catch((error) => {
