@@ -16,9 +16,6 @@ function MyProducts() {
     axios
       .get("https://sellnow-backend.onrender.com/products/myProducts")
       .then((response) => {
-        const userProducts = response.data.filter(
-          (product) => product.email === userEmail
-        );
         setProducts(userProducts);
       })
       .catch((error) => {
