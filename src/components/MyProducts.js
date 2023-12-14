@@ -11,7 +11,7 @@ function MyProducts() {
 
   const fetchProducts = () => {
     axios
-      .get(`${serverUrl}/products`)
+      .get(`${serverUrl}/products/myProducts`)
       .then((response) => {
         setProducts(userProducts);
       })
